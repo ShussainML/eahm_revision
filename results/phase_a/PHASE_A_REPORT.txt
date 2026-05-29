@@ -1,0 +1,93 @@
+========================================================================
+PHASE A REPORT
+========================================================================
+Generated: 2026-05-29T20:57:38.073879
+Total runs: 128
+
+
+α = 0.1
+------------------------------------------------------------
+  FedProx                    39.71 ± 11.77%  (n=5)
+  EAHM-FL-no_weighting       39.20 ± 10.68%  (n=5)
+  FedNova                    38.95 ±  7.76%  (n=5)
+  EAHM-FL-no_selection       37.56 ± 13.95%  (n=5)
+  FedAvg                     37.54 ± 12.21%  (n=5)
+  EAHM-FL                    37.33 ± 10.71%  (n=5)
+  FedDyn                     10.97 ±  1.59%  (n=5)
+  SCAFFOLD                   10.00 ±  0.00%  (n=5)
+
+α = 0.3
+------------------------------------------------------------
+  FedProx                    58.96 ±  5.30%  (n=5)
+  FedAvg                     58.36 ±  5.74%  (n=5)
+  EAHM-FL-no_selection       58.27 ±  5.45%  (n=5)
+  EAHM-FL                    58.03 ±  7.49%  (n=5)
+  FedNova                    57.86 ±  4.23%  (n=5)
+  EAHM-FL-no_weighting       57.76 ±  4.45%  (n=5)
+  FedDyn                     30.89 ±  6.41%  (n=5)
+  SCAFFOLD                    9.83 ±  0.57%  (n=5)
+
+α = 0.5
+------------------------------------------------------------
+  FedAvg                     67.63 ±  4.45%  (n=3)
+  FedNova                    66.49 ±  4.29%  (n=3)
+  FedProx                    66.04 ±  3.21%  (n=3)
+  EAHM-FL-no_selection       65.38 ±  3.93%  (n=3)
+  EAHM-FL-no_weighting       64.33 ±  5.72%  (n=3)
+  EAHM-FL                    64.11 ±  2.13%  (n=3)
+  FedDyn                     41.90 ±  2.27%  (n=3)
+  SCAFFOLD                   10.05 ±  0.09%  (n=3)
+
+α = 1.0
+------------------------------------------------------------
+  EAHM-FL-no_weighting       73.42 ±  2.01%  (n=3)
+  FedAvg                     73.34 ±  2.08%  (n=3)
+  EAHM-FL-no_selection       73.12 ±  2.22%  (n=3)
+  FedProx                    72.98 ±  2.10%  (n=3)
+  FedNova                    72.93 ±  2.38%  (n=3)
+  EAHM-FL                    72.37 ±  2.48%  (n=3)
+  FedDyn                     61.24 ±  5.37%  (n=3)
+  SCAFFOLD                   11.06 ±  3.10%  (n=3)
+
+========================================================================
+PAIRWISE T-TESTS vs EAHM-FL (Welch)
+========================================================================
+
+α = 0.1
+  EAHM-FL vs FedAvg                    Δ= -0.21pp  p=0.9781 
+  EAHM-FL vs FedProx                   Δ= -2.38pp  p=0.7469 
+  EAHM-FL vs FedNova                   Δ= -1.62pp  p=0.7922 
+  EAHM-FL vs SCAFFOLD                  Δ=+27.33pp  p=0.0047 **
+  EAHM-FL vs FedDyn                    Δ=+26.36pp  p=0.0049 **
+  EAHM-FL vs EAHM-FL-no_selection      Δ= -0.23pp  p=0.9778 
+  EAHM-FL vs EAHM-FL-no_weighting      Δ= -1.87pp  p=0.7892 
+
+α = 0.3
+  EAHM-FL vs FedAvg                    Δ= -0.32pp  p=0.9408 
+  EAHM-FL vs FedProx                   Δ= -0.93pp  p=0.8266 
+  EAHM-FL vs FedNova                   Δ= +0.17pp  p=0.9653 
+  EAHM-FL vs SCAFFOLD                  Δ=+48.20pp  p=0.0001 **
+  EAHM-FL vs FedDyn                    Δ=+27.14pp  p=0.0003 **
+  EAHM-FL vs EAHM-FL-no_selection      Δ= -0.24pp  p=0.9557 
+  EAHM-FL vs EAHM-FL-no_weighting      Δ= +0.27pp  p=0.9460 
+
+========================================================================
+ABLATION CONTRIBUTIONS
+========================================================================
+  α=0.1: full=37.33 no_sel=37.56 no_w=39.20  sel_contrib=-0.23 w_contrib=-1.87 ratio=0.12x
+  α=0.3: full=58.03 no_sel=58.27 no_w=57.76  sel_contrib=-0.24 w_contrib=+0.27 ratio=-0.87x
+  α=0.5: full=64.11 no_sel=65.38 no_w=64.33  sel_contrib=-1.27 w_contrib=-0.22 ratio=5.77x
+  α=1.0: full=72.37 no_sel=73.12 no_w=73.42  sel_contrib=-0.75 w_contrib=-1.05 ratio=0.71x
+
+========================================================================
+COMM + COMPUTE COST
+========================================================================
+  Algorithm                     UpGB   DownGB   Round_s   PeakGB
+  EAHM-FL                       0.40     0.40     11.97     0.22
+  EAHM-FL-no_selection          0.40     0.40     12.51     0.22
+  EAHM-FL-no_weighting          0.40     0.40     14.13     0.22
+  FedAvg                        0.40     0.40     13.03     0.22
+  FedDyn                        0.40     0.40     13.83     0.22
+  FedNova                       0.40     0.40     12.56     0.22
+  FedProx                       0.40     0.40     13.23     0.22
+  SCAFFOLD                      0.80     0.80     12.86     0.23
